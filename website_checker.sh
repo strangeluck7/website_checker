@@ -35,8 +35,8 @@ function website_update_check() {
 }
 
 function slackNotifier() {
-    echo "New Puppies have been posted!"
-	curl -X POST --data-urlencode "payload={\"attachments\": [{\"color\": \"#FFFF00\", \"title\": \"Dog Notify\", \"title_link\": \"$1\", \"text\": \"A new dog has been added to the website: $address\"}], \"channel\": \"#dogs\", \"username\": \"Dog Notify\", \"icon_emoji\": \":dog2:\"}" "$slack_webhook"
+    echo "Website changes have occured!"
+	curl -X POST --data-urlencode "payload={\"attachments\": [{\"color\": \"#FFFF00\", \"title\": \"Website Checker\", \"title_link\": \"$1\", \"text\": \"A website change has occured: $address\"}], \"channel\": \"#<ENTER CHANNEL>\", \"username\": \"Website Checker\", \"icon_emoji\": \":globe_with_meridians:\"}" "$slack_webhook"
 }
 
 website_update_check "$website"
